@@ -5,7 +5,7 @@ class ResolutionsController < ApplicationController
   # GET /resolutions.json
   def index
     new
-    @resolutions = Resolution.recent.page params[:page]
+    @resolutions = Resolution.includes(:user => :profile).recent.page params[:page]
   end
 
   # GET /resolutions/1

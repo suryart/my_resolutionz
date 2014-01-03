@@ -1,29 +1,29 @@
-<%= render 'form' %>
+<% if current_user.present? %>
+  <%= render 'form' %>
+<% end %>
+<hr />
+<% @resolutions.each do |resolution| %>
 
-<h1>Listing resolutions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @resolutions.each do |resolution| %>
-      <tr>
-        <td><%= resolution.description %></td>
-        <td><%= link_to 'Show', resolution %></td>
-        <td><%= link_to 'Edit', edit_resolution_path(resolution) %></td>
-        <td><%= link_to 'Destroy', resolution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Resolution', new_resolution_path %>
+  <div class="page-header row">
+    <div class="col-sm-2">
+      <%= image_tag(resolution.user.avatar, :alt => 'avatar') %>
+    </div>
+    <div class="col-md-8">
+      <h3><%= resolution.user.name %></h3>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="lead">
+            <%= resolution.description %>
+          </p>
+        </div>
+        <% if current_user == resolution.user %>
+          <div class="col-md-6">
+            <%= link_to 'Edit', edit_resolution_path(resolution) %>
+            <%= link_to 'Destroy', resolution, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%#= link_to 'Show', resolution %>
+<% end %>
