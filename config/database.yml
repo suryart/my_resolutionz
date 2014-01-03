@@ -14,7 +14,7 @@ development:
   username: <%= ENV['DEVELOPMENT_USERNAME'] %>
   password: <%= ENV['DEVELOPMENT_PASSWORD'] %>
   socket: /var/run/mysqld/mysqld.sock
-  host: <%= ENV['DEVELOPMENT_HOST'] %>
+  host: <%= ENV['DEVELOPMENT_DB_HOST'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -28,13 +28,13 @@ test:
   username: <%= ENV['TEST_USERNAME'] %>
   password: <%= ENV['TEST_PASSWORD'] %>
   socket: /var/run/mysqld/mysqld.sock
-  host: <%= ENV['TEST_HOST'] %>
+  host: <%= ENV['TEST_DB_HOST'] %>
 
 staging:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  host: <%= ENV['STAGING_HOST'] %>
+  host: <%= ENV['STAGING_DB_HOST'] %>
   database: <%= ENV['STAGING_DB'] %>
   pool: 25
   username: <%= ENV['STAGING_USERNAME'] %>
@@ -45,7 +45,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  host: <%= ENV['PRODUCTION_HOST'] %>
+  host: <%= ENV['PRODUCTION_DB_HOST'] %>
   database: <%= ENV['PRODUCTION_DB'] %>
   pool: 25
   username: <%= ENV['PRODUCTION_USERNAME'] %>
