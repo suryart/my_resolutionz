@@ -1,5 +1,5 @@
 <hr/>
-<%= form_for @resolution, html: { role: 'form', class: "form-horizontal" }, remote: true  do |f| %>
+<%= form_for(@resolution, html: { role: 'form', class: "form-horizontal" }, remote: true, authenticity_token: true)  do |f| %>
   <% if @resolution.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@resolution.errors.count, "error") %> prohibited this resolution from being saved:</h2>
