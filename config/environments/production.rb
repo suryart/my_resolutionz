@@ -80,7 +80,7 @@ Resolutions::Application.configure do
 
   config.action_mailer.default_url_options = { :host => ENV['PRODUCTION_HOST'] }
 end
-Resolutions::Application.configure
+
 Resolutions::Application.config.middleware.use ExceptionNotification::Rack,
   :email => {
     :email_prefix => ENV['PRODUCTION_EMAIL_PREFIX'],
