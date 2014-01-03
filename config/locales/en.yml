@@ -1,0 +1,57 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  activerecord:
+    attributes:
+      resolution:
+        description: "Update Resolution"
+  links:
+    about:
+      name: "About"
+      title: "About us"
+    home: 
+      name: "Home"
+      title: "Visit your home"
+    jobs: 
+      name: "Resolutions"
+      title: "Resolutions posted by you"
+    contact: 
+      name: "Contact"
+      title: "Contact us"
+    profile:
+      edit: "Manage Profile"
+      show: "Profile"
+    settings:
+      email: "Email Settings"
+    sign_in: "Login"
+    sign_out: "Logout"
+    sign_up: "Sign up"
+    resend_confirmation_instructions: "Resend Confirmation Instructions"
+  title:
+    website:
+      name: "resolutions"
+    layout:
+      main: "MyResolutions"
+      default: "your resolutions of this year!"
+  views:
+    resolution:
+      description_placeholder: "What's your resolution?"

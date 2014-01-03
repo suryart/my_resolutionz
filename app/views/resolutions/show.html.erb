@@ -1,0 +1,11 @@
+<p>
+  <strong>description:</strong>
+  <%= @resolution.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_resolution_path(@resolution) %> |
+<%= link_to 'Back', resolutions_path %>
+
+<% TheComments.config.template_engine = 'slim' %>
+<%= render partial: 'the_comments/tree', locals: { commentable: @resolution, comments_tree: @comments } %>

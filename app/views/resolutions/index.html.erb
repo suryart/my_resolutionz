@@ -1,0 +1,29 @@
+<%= render 'form' %>
+
+<h1>Listing resolutions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resolutions.each do |resolution| %>
+      <tr>
+        <td><%= resolution.description %></td>
+        <td><%= link_to 'Show', resolution %></td>
+        <td><%= link_to 'Edit', edit_resolution_path(resolution) %></td>
+        <td><%= link_to 'Destroy', resolution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resolution', new_resolution_path %>
