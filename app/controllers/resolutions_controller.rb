@@ -16,7 +16,7 @@ class ResolutionsController < ApplicationController
 
   # GET /resolutions/new
   def new
-    @resolution = Resolution.new
+    @resolution = current_user.resolutions.new
   end
 
   # GET /resolutions/1/edit
@@ -26,12 +26,12 @@ class ResolutionsController < ApplicationController
   # POST /resolutions
   # POST /resolutions.json
   def create
-    @resolution = Resolution.new(resolution_params)
+    @resolution = current_user.resolutions.new(resolution_params)
 
     respond_to do |format|
       if @resolution.save
         format.html { redirect_to root_url, notice: 'Resolution was successfully created.' }
-        format.js   { redirect_to root_url, notice: 'Resolution was successfully created.' }
+        format.js
         format.json { render action: 'show', status: :created, location: @resolution }
       else
         format.html { render action: 'new' }

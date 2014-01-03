@@ -1,0 +1,21 @@
+<div class="page-header row">
+  <div class="col-sm-2">
+    <%= image_tag(@resolution.user.avatar, :alt => 'avatar') %>
+  </div>
+  <div class="col-md-8">
+    <h3><%= @resolution.user.name %></h3>
+    <div class="row">
+      <div class="col-md-10">
+        <p class="lead">
+          <%= truncate(@resolution.description, length: 200) { link_to "Continue", @resolution } %>
+        </p>
+      </div>
+      <% if current_user == @resolution.user %>
+        <div class="col-md-2">
+          <%= link_to 'Edit', edit_resolution_path(@resolution) %>
+          <%= link_to 'Destroy', @resolution, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
