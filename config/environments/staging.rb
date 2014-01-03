@@ -81,7 +81,7 @@ Resolutions::Application.configure do
   config.action_mailer.default_url_options = { :host => ENV['STAGING_HOST'] }
 end
 
-Nh::Application.config.middleware.use ExceptionNotification::Rack,
+Resolutions::Application.config.middleware.use ExceptionNotification::Rack,
   :email => {
     :email_prefix => ENV['STAGING_EMAIL_PREFIX'],
     :sender_address => ENV['STAGING_SENDER_ADDRESS'],
